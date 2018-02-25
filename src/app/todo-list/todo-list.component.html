@@ -1,0 +1,23 @@
+<h2>{{ nomeSite }}</h2>
+
+<div>
+  <label>Item:
+      <input type="text" 
+        [value]="nome" 
+        (input)="nome = $event.target.value"
+      />  
+
+      <input type="text"  [(ngModel)]="nome"/>
+
+  </label>
+
+  <button (click)="adicionar()" class="btn btn-primary"> 
+    Adicionar  </button>
+    <p>digitado: {{ nome }}</p>
+</div>
+
+<ul>
+  <li *ngFor="let item of items">
+    {{ item }}
+  </li>
+</ul>
