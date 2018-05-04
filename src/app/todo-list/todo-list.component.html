@@ -1,12 +1,12 @@
 <h2>{{ nomeSite }}</h2>
 
 <ul>
-  <li *ngFor="let contact of contactlist">
-    {{contact.name}}
-    <button (click)="remover(contact.name)">Excluir</button>
+  <li *ngFor="let item of listaItems">
+    {{item.descricao}}
+    <button (click)="remover(item.descricao)">Excluir</button>
   </li>
 </ul>
 <form (submit)="adicionar()" >
-    <input type="text" [(ngModel)]="txtName" name="Name">
+    <input type="text" [(ngModel)]="descricao" name="Descricao">
     <button type="submit"> Add</button>
 </form>

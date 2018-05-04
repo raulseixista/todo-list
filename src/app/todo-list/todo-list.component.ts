@@ -15,32 +15,32 @@ export class TodoListComponent implements OnInit {
   nomeSite: String;
 
   //items : Item[];
-  contactlist;
-  txtName;
+  listaItems;
+  descricao;
   
   constructor(private todolistService : TodoListService) {
     this.nomeSite = 'TODO List do Sucesso';
    }
 
   ngOnInit() {
-    this.contactlist=[
-      {name:'teste inicial'}
+    this.listaItems=[
+      {descricao:'teste inicial'}
     ];
 
   }
 
   adicionar(){
-    this.contactlist.push(
+    this.listaItems.push(
       {
-        name: this.txtName     
+        descricao: this.descricao     
       }        
     )  
   }
 
-  remover(name){
-    for (let index = 0; index < this.contactlist.length; index++) {
-      if (this.contactlist[index]["name"]==name) {
-        this.contactlist.splice(index,1);
+  remover(descricao){
+    for (let index = 0; index < this.listaItems.length; index++) {
+      if (this.listaItems[index]["descricao"]==descricao) {
+        this.listaItems.splice(index,1);
       }      
     }
   }
