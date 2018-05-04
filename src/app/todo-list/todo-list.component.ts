@@ -13,18 +13,28 @@ import { Item } from './item';
 })
 export class TodoListComponent implements OnInit {
   nomeSite: String;
-  nome: String = 'abv';
-  items: Item[];
+
+  contactlist;
+  txtName;
   
   constructor(private todolistService : TodoListService) {
     this.nomeSite = 'TODO List do Sucesso';
-   
-    //this.items = this.todolistService.getItems();
    }
-adicionar(){
-  alert('Adicionou item');
-}
-  ngOnInit() {
-  }
 
+  ngOnInit() {
+    this.contactlist=[
+      {name:'teste inicial'}
+    ];
+
+  }
+  adicionar(){
+    this.contactlist.push(      {        name: this.txtName      }    )  
+  }
+  remover(name){
+    for (let index = 0; index < this.contactlist.length; index++) {
+      if (this.contactlist[index]["name"]==name) {
+        this.contactlist.splice(index,1);
+      }      
+    }
+  }
 }
