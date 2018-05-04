@@ -14,6 +14,7 @@ import { Item } from './item';
 export class TodoListComponent implements OnInit {
   nomeSite: String;
 
+  //items : Item[];
   contactlist;
   txtName;
   
@@ -27,9 +28,15 @@ export class TodoListComponent implements OnInit {
     ];
 
   }
+
   adicionar(){
-    this.contactlist.push(      {        name: this.txtName      }    )  
+    this.contactlist.push(
+      {
+        name: this.txtName     
+      }        
+    )  
   }
+
   remover(name){
     for (let index = 0; index < this.contactlist.length; index++) {
       if (this.contactlist[index]["name"]==name) {
